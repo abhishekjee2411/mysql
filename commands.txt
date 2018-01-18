@@ -15,6 +15,12 @@ Change the root user's password
 	where	******** is the current password
 			######## is the new password
 			
+# mysqladmin -u root -p password ########
+	where	******** is the current password
+			######## is the new password
+		
+	You will have to enter your current password, when prompted, in order to change the password.
+			
 Check if MySQL is running:
 
 # mysqladmin -u root -p ping
@@ -80,6 +86,8 @@ Create a new database:
 # mysqladmin -u root -p create ########
 	where 	######## is the name of the DB
 	
+	At a time, you can create only one database, not more.
+	
 Verify that the database has been created:
 
 # mysql -u root -p
@@ -120,3 +128,8 @@ HELP
 # mysqladmin --help
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
