@@ -129,7 +129,11 @@ HELP
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
+# mysqlshow -u root -p
+root123
+	Lists the databases currently hosted in MySQL server.
+	
+# mysqlshow -u root -p --count mysql
+root123
+	Lists the tables hosted in the database "mysql"
+	
