@@ -1,0 +1,51 @@
+https://dev.mysql.com/doc/refman/5.5/en/execution-plan-information.html
+
+======================================
+UNDERSTANDING THE QUERY EXECUTION PLAN
+======================================
+
+Execution Plan
+
+--Indexes
+--Joins
+--EXPLAIN PLAN
+
+=================================
+OPTIMIZING QUERIES WITH "EXPLAIN"
+=================================
+
+Table joins
+Table join order
+
+EXPLAIN <query>
+EXPLAIN EXTENDED
+EXPLAIN PARTITIONS
+SELECT vs SELECT STRAIGHT_JOIN
+	to give a hint to the optimizer to use a join order corresponding to the order in which the tables are named in a SELECT statement.
+	https://dev.mysql.com/doc/refman/5.5/en/select.html
+ANALYZE TABLE
+	updates the statistics of the table(s)
+		e.g.:	cardinality of keys
+	https://dev.mysql.com/doc/refman/5.5/en/analyze-table.html
+
+	EXPLAIN <table-name>
+	==
+	DESCRIBE <table-name>
+		https://dev.mysql.com/doc/refman/5.5/en/describe.html
+	+
+	SHOW COLUMNS FROM <table-name>
+		https://dev.mysql.com/doc/refman/5.5/en/show-columns.html
+		
+=======================
+"EXPLAIN" OUTPUT FORMAT
+=======================
+
+EXPLAIN returns a row of info about each table used in the SELECT statement.
+Table order as followed by the optimizer.
+MySQL uses a nested-loop join method to resolve all joins.
+
+EXTENDED
+	when used with EXPLAIN, the EXTENDED keyword cause it to produce extra info that xan be viewed by issuing a SHOW WARNINGS statement following the EXPLAIN statement
+	EXPLAIN EXTENDED also displays the filtered columns.
+	
+	
