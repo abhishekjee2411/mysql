@@ -20,3 +20,21 @@ insert into tutorials_tbl (tutorial_title, tutorial_author, submission_date) val
 	
 select * from tutorials_tbl limit 2;
 
+--WHERE clause
+	--Search using primary key is faster.
+
+select * from tutorials_tbl where tutorial_author='Sanjay';
+
+/*
+	<, >, <=, >=, =, !=
+	AND, OR, NOT
+	LIKE	:	you can perform a case-insensitive search using LIKE.
+	BINARY	:	if BINARY is used in the WHERE clause, then case-sensitive search is imposed.
+*/
+
+select * from tutorials_tbl where tutorial_author='sanjay';
+select * from tutorials_tbl where binary tutorial_author='sanjay';
+
+--UPDATE
+
+update tutorials_tbl set tutorial_title='Learning JAVA' where tutorial_id=3;

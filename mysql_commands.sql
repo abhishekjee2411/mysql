@@ -72,6 +72,13 @@ show columns from <tablename>;
 show index from <tablename>;
 show table status like <tablename>\G;
 
+FORCE INDEX
+USE INDEX
+IGNORE INDEX
+	--to use or ignore an index listed in the possible_keys column.
+	
+
+
 ----------------------------
 --	MYSQL CONNECTION
 ----------------------------

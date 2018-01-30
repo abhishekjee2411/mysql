@@ -29,7 +29,7 @@ ANALYZE TABLE
 	https://dev.mysql.com/doc/refman/5.5/en/analyze-table.html
 
 	EXPLAIN <table-name>
-	==
+	== aka ==
 	DESCRIBE <table-name>
 		https://dev.mysql.com/doc/refman/5.5/en/describe.html
 	+
@@ -45,7 +45,10 @@ Table order as followed by the optimizer.
 MySQL uses a nested-loop join method to resolve all joins.
 
 EXTENDED
-	when used with EXPLAIN, the EXTENDED keyword cause it to produce extra info that xan be viewed by issuing a SHOW WARNINGS statement following the EXPLAIN statement
+	when used with EXPLAIN, the EXTENDED keyword causes it to produce extra info that can be viewed by issuing a SHOW WARNINGS statement following the EXPLAIN statement.
 	EXPLAIN EXTENDED also displays the filtered columns.
-	
-	
+
+========================
+"EXPLAIN" OUTPUT COLUMNS
+========================
+
