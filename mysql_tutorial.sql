@@ -38,3 +38,46 @@ select * from tutorials_tbl where binary tutorial_author='sanjay';
 --UPDATE
 
 update tutorials_tbl set tutorial_title='Learning JAVA' where tutorial_id=3;
+
+--NULL
+
+create table tcount_tbl
+(
+tutorial_author varchar(40) not null,
+tutorial_count int
+);
+
+INSERT INTO tcount_tbl
+(tutorial_author, tutorial_count) values ('mahran', 20);
+
+INSERT INTO tcount_tbl
+(tutorial_author, tutorial_count) values ('mahnaz', NULL);
+
+INSERT INTO tcount_tbl
+(tutorial_author, tutorial_count) values ('Jen', NULL);
+
+INSERT INTO tcount_tbl
+(tutorial_author, tutorial_count) values ('Gill', 20);
+
+--REGEXP (Regular Expressions)
+
+
+
+--TRANSACTIONS--
+
+"
+BEGIN WORK
+.
+.
+.
+COMMIT/ROLLBACK
+"
+
+"
+AUTOCOMMIT
+	1	TRUE	Statements will autocommit by default when it finishes.
+	0	FALSE	Statements will not autocommit.
+"	
+show global variables like 'autocommit';
+
+
