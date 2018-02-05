@@ -90,6 +90,8 @@ InnoDB
 --REFERENTIAL INTEGRITY--
 -------------------------
 
+"demo/demo"
+
 create table demotab
 (
 slno int unique
@@ -195,4 +197,38 @@ insert into demotab3 values (8);
 insert into demotab3 values (8);
 insert into demotab3 values (9);
 insert into demotab3 values (NULL);
+
+create table person_tbl
+(
+	first_name varchar(20),
+	last_name varchar(20)
+);
+
+insert into person_tbl values ('Jay','Thomas');
+insert into person_tbl values ('Jay','Thomas');
+insert into person_tbl values ('Joe','Morris');
+insert into person_tbl values ('Joe','Morris');
+insert into person_tbl values ('Adele','Bing');
+insert into person_tbl values ('Adele','Bing');
+insert into person_tbl values ('Siphy','Brown');
+insert into person_tbl values ('Siphy','Brown');
+
+alter ignore table person_tbl add primary key (first_name, last_name);
+"
+Query OK, 8 rows affected (0.17 sec)
+Records: 8  Duplicates: 4  Warnings: 0
+"
+select * from person_tbl;
+"
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| Adele      | Bing      |
+| Jay        | Thomas    |
+| Joe        | Morris    |
+| Siphy      | Brown     |
++------------+-----------+
+4 rows in set (0.00 sec)
+"
+--The existing duplicates are removed and the table now contains distinct values only, no duplicates.
 

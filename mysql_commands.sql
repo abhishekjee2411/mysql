@@ -83,3 +83,72 @@ IGNORE INDEX
 --	MYSQL CONNECTION
 ----------------------------
 
+
+
+
+
+------------------------------
+--	MYSQL DATABASE ENGINES  --
+------------------------------
+http://zetcode.com/databases/mysqltutorial/
+http://zetcode.com/databases/mysqltutorial/storageengines/
+
+"
+MySQL Storage Engines
+	A storage engine is a software module that a DBMS uses to create, read from, and update data in a database.
+	
+Types of storage engines in MySQL:
+	Transactional
+	Non-transactional
+	
+MySQL 5.5 onwards:
+	default storage engine = InnoDB
+	
+MyISAM
+	Fast storage engine.
+	Does not support transactions.
+	Supports - table-level locking.
+	Used mostly in Web and Data Warehousing.
+InnoDB
+	ACID compliant - Atomic, Consistent, Isolated, Durable
+	Supports - row-level locking, crash-recovery and multi-version-concurrency control.
+	The only engine which provides foreign key referential integrity constraint.
+CSV
+	Stores data in CSV files.
+	Very flexible, because data provided in this format (CSV) is easily integrated into other applications.
+Memory
+	Creates tables in memory.
+	Fastest engine.
+	Supports - table-level locking.
+	Does not support transactions.
+	Ideal for creating temporary tables or quick lookups.
+	Data persists throughout the session only.
+Merge
+	
+Archive
+	Optimized for high-speed insertions.
+	It compresses data as it is entered.
+	Does not support transactions.
+	Ideal for storing and retrieving large amounts of seldom-referenced historical, archived data.
+Federated
+	
+Blackhole
+	
+Example
+	
+
+"
+--Storage engine is specified at the time of table creation.
+create table cars
+(
+	id integer primary key,
+	name varchar(50),
+	cost integer
+) engine='MyISAM';
+
+--To list the tables in all the databases and their engines:
+select table_schema, table_name, engine from information_schema.tables order by engine, table_schema, table_name;
+
+--To alter the engine of a table:
+alter table cars engine='InnoDB';
+
